@@ -1,0 +1,211 @@
+*,
+*::before,
+*::after {
+   box-sizing: border-box;
+}
+
+ul {
+   list-style-type: none;
+}
+
+a {
+   text-decoration: none;
+   color: inherit;
+}
+
+img {
+   display: block;
+   width: 100%;
+}
+body{
+   overflow: hidden;
+}
+
+.loader {
+   width: 48px;
+   height: 48px;
+   border-radius: 50%;
+   display: inline-block;
+   position: relative;
+   border: 3px solid;
+   border-color: #FFF #FFF transparent;
+   box-sizing: border-box;
+   animation: rotation 1s linear infinite;
+ }
+ .loader::after {
+   content: '';  
+   box-sizing: border-box;
+   position: absolute;
+   left: 0;
+   right: 0;
+   top: 0;
+   bottom: 0;
+   margin: auto;
+   border: 3px solid;
+   border-color: transparent #FF3D00 #FF3D00;
+   width: 24px;
+   height: 24px;
+   border-radius: 50%;
+   animation: rotationBack 0.5s linear infinite;
+   transform-origin: center center;
+ }
+
+  @keyframes rotation {
+   0% {
+     transform: rotate(0deg);
+   }
+   100% {
+     transform: rotate(360deg);
+   }
+ } 
+     
+ @keyframes rotationBack {
+   0% {
+     transform: rotate(0deg);
+   }
+   100% {
+     transform: rotate(-360deg);
+   }
+ } 
+
+ #lodingBage{
+   position: fixed;
+   width: 100%;
+   height: 100vh;
+   top: 0;
+   bottom: 0;
+   background-color: #2f2e2e;
+z-index: 9999; 
+display: flex;
+justify-content: center;
+align-items: center;
+} 
+
+/* Home */
+
+#home {
+   & {
+      width: 100%;
+      height: 100vh;
+      background-image: url(../images/photo-1473691955023-da1c49c95c78.avif);
+      background-repeat: no-repeat;
+      background-position: center center;
+      background-size: 100% 100%;
+      color: white;
+      position: relative;
+   }
+   .layer {
+      position: absolute;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(61, 63, 63, 0.6);
+   }
+   .nav-menu {
+      position: fixed;
+      left: 0;
+      top: 0;
+      width: 0px;
+      z-index: 99999;
+      overflow-x: hidden;
+   }
+   .menu {
+      position: absolute;
+      top: 50%;
+      left: 3%;
+      font-size: 30px;
+      cursor: pointer;
+      border: none;
+      background-color: transparent;
+      color: white;
+   transition:color,1s ;
+   }
+   .menu:hover{
+      color: black;
+   }
+   .menu span{
+      color: gray;
+   }
+   .nav-menu a:hover {
+      color: rgba(164, 10, 10, 0.9);
+      transition: 0.5s;
+   }
+   .nav-menu i {
+      position: absolute;
+      right: 40px;
+   }
+}
+/* slider */
+#slider {
+  
+   & {
+      margin: 100px auto;
+      width: 50%;
+      background-color: rgba(164, 10, 10, 0.9);
+   }
+   p {
+      background-color: #fa7979;
+      padding: 10px 0;
+      color: black;
+      display: none;
+   }
+   h2 {
+      padding: 10px;
+   }
+}
+#slider h2:hover{
+   color: black;
+}
+/* ### count  */
+#count {
+   & {
+      background-image: url(../images/red-night-dark-lights.jpg);
+      
+      background-position: center;
+      background-size: 100% 100%;
+      position: relative;
+      min-height: 330px;
+   }
+   @media (max-width: 992px) {
+      & {
+         min-height: 700px;
+      }
+   }
+   .layer {
+      position: absolute;
+      top: 0px;
+      left: 0px;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(114, 115, 115, 0.6);
+      color: rgb(0, 0, 0);
+   }
+   .date {
+      font-weight: 700;
+      font-size: 24px;
+      border: 2px solid white;
+   }
+}
+
+.days,.hours,.minutes,.seconds{
+   border: 2px solid white;
+}
+
+
+#form {
+   .icons span {
+      width: 40px;
+      border: 1px solid black;
+      margin: 0 10px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: 0.5s;
+   }
+   .icons span:hover {
+      background-color: red;
+      color: white;
+   }
+}
